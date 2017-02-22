@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.liuhw.learn"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.NotificationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.MineActivity">
+        </activity>
+        <activity android:name=".activity.GifActivity">
+        </activity>
+        <activity android:name=".activity.MainActivity">
+        </activity>
+
+        <receiver
+            android:name=".boardcastreceiver.MyAppWidgetProvider"
+            android:permission="">
+            <intent-filter>
+                <action android:name="com.liuhw.deeplearn.receiver.update"/>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/app_widget_provider_info_1"/>
+        </receiver>
+
+        <service android:name=".service.WidgetService">
+            <intent-filter>
+                <action android:name="com.liuhw.deeplearn.service.update"/>
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>
