@@ -20,5 +20,6 @@ public class operator {
         System.out.println(Integer.toBinaryString(b));
         System.out.println(b);
         System.out.println(b >> 1);
+        System.out.println(1 << 3);
     }
 }
